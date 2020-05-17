@@ -6,6 +6,8 @@ Zeats.StringExtensions has the objective to assist in the development of applica
 
 ## Installation
 
+https://www.nuget.org/packages/Zeats.StringExtensions
+
 ```PM>
 Install-Package Zeats.StringExtensions
 ```
