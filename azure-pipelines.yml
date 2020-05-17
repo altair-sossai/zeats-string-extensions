@@ -33,12 +33,15 @@ steps:
 
 - task: DotNetCoreCLI@2
   inputs:
-    command: 'publish'
-    arguments: -o $(Build.ArtifactStagingDirectory)
-    publishWebProjects: true
+    command: 'pack'
+
+- task: CopyFiles@2
+  inputs:
+    sourceFolder: '$(Build.SourcesDirectory)'
+    contents: '**/*.nupkg'
+    targetFolder: '$(Build.ArtifactStagingDirectory)'
 
 - task: PublishBuildArtifacts@1
   inputs:
-    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-    ArtifactName: 'drop'
-    publishLocation: 'Container'
+    pathToPublish: '$(Build.ArtifactStagingDirectory)'
+    artifactName: drop
