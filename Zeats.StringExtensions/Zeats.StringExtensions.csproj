@@ -6,6 +6,7 @@
     <Version>1.0.1</Version>
     <Authors>Altair Sossai</Authors>
     <Company>Zeats</Company>
+    <RepositoryUrl>https://github.com/altair-sossai/zeats-string-extensions</RepositoryUrl>
   </PropertyGroup>
 
 </Project>
