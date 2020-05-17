@@ -26,6 +26,7 @@ steps:
 - task: DotNetCoreCLI@2
   inputs:
     command: 'build'
+    arguments: '--configuration Release'
 
 - task: DotNetCoreCLI@2
   inputs:
@@ -33,15 +34,17 @@ steps:
 
 - task: DotNetCoreCLI@2
   inputs:
-    command: 'pack'
+    command: custom
+    custom: pack
+    arguments: '--configuration Release -p:PackageVersion=1.0.$(Build.BuildId)'
 
 - task: CopyFiles@2
   inputs:
     sourceFolder: '$(Build.SourcesDirectory)'
-    contents: '**/*.nupkg'
-    targetFolder: '$(Build.ArtifactStagingDirectory)'
+    contents: '**/Release/*.nupkg'
+    targetFolder: '$(Build.StagingDirectory)'
 
 - task: PublishBuildArtifacts@1
   inputs:
-    pathToPublish: '$(Build.ArtifactStagingDirectory)'
+    pathToPublish: '$(Build.StagingDirectory)'
     artifactName: drop
