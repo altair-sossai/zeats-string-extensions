@@ -34,7 +34,8 @@ steps:
 
 - task: DotNetCoreCLI@2
   inputs:
-    command: 'pack'
+    command: custom
+    custom: pack
     arguments: '--configuration Release -p:PackageVersion=$(Date:yyyyMMdd).$(Date:HHmm).$(Date:ss)'
 
 - task: CopyFiles@2
