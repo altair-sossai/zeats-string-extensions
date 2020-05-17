@@ -40,10 +40,10 @@ steps:
 - task: CopyFiles@2
   inputs:
     sourceFolder: '$(Build.SourcesDirectory)'
-    contents: '**\Release\*.nupkg'
-    targetFolder: '$(Build.ArtifactStagingDirectory)'
+    contents: '**/Release/*.nupkg'
+    targetFolder: '$(Build.StagingDirectory)'
 
 - task: PublishBuildArtifacts@1
   inputs:
-    pathToPublish: '$(Build.ArtifactStagingDirectory)'
+    pathToPublish: '$(Build.StagingDirectory)'
     artifactName: drop
