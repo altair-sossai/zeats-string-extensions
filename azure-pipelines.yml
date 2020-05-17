@@ -36,7 +36,7 @@ steps:
   inputs:
     command: custom
     custom: pack
-    arguments: '--configuration Release -p:PackageVersion=$(Date:yyyyMMdd).$(Date:HHmm).$(Date:ss)'
+    arguments: '--configuration Release -p:PackageVersion=1.0.$(Build.BuildId)'
 
 - task: CopyFiles@2
   inputs:
