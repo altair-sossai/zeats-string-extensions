@@ -2,6 +2,11 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
+    <PackageId>Zeats.StringExtensions</PackageId>
+    <Version>1.0.1</Version>
+    <Authors>Altair Sossai</Authors>
+    <Company>Zeats</Company>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 
 </Project>
